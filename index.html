@@ -35,6 +35,7 @@ var rBank = [0, 80, 130, 180];
 var rTurn = [0, 35, 63, 90];
 
 var smallbase = 40;
+var medbase = 60;
 var largebase = 80;
 
 var tiephantom = {
@@ -521,7 +522,7 @@ decimator.img.src = "images/decimator.png";
 var firespray = {
 	faction: "empire",
 	id: "firespray",
-	base: largebase,
+	base: medbase,
 	protrusions: 1,
 	offset: 5,
 	width: 90,
@@ -2461,7 +2462,7 @@ function drawFiringArcs (x, y) {
 		arcrange = 0;
 	};
 	var color = (ship.faction == "empire") ? "#70C045" : ((ship.faction == "alliance") ? "#EC2424" : "#DCA824");
-	var offset = (ship.base == smallbase) ? 16 : 35;
+	var offset = (ship.base == smallbase) ? 16 : ((ship.base == medbase) ? 25 : 35);
 	ctx[2].save();
 	ctx[2].lineWidth = 1;
 	ctx[2].fillStyle = color;
